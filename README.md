@@ -60,11 +60,15 @@ Here is the 'basic\_usage' example program, included in the download:
     	if (button1.pressed())
     		Serial.println("Button 1 pressed");
     	
-    	if (button1.released())
+    	if (button2.released())
     		Serial.println("Button 2 released");
     	
-    	if (button1.toggled())
-    		Serial.print(button3.read() == Button::PRESSED ? "Button 3 has been pressed" : "Button 3 has been released");
+    	if (button3.toggled()) {
+    		if (button3.read() == Button::PRESSED)
+    			Serial.println("Button 3 has been pressed");
+    		else
+    			Serial.println("Button 3 has been released");
+    	}
     }
 
 Documentation
