@@ -6,24 +6,24 @@
 
 #include "Button.h"
 
-Button::Button(uint8_t pin, unsigned long delay, bool state, bool has_changed, unsigned long ignore_until)
+Button::Button(uint8_t pin, bool state, unsigned long delay, bool has_changed, unsigned long ignore_until)
 :  _pin(pin)
-,  _delay(100)
 ,  _state(HIGH)
+,  _delay(80)
 ,  _has_changed(false)
 ,  _ignore_until(0)
 {	
-setup(pin, delay, state, has_changed, ignore_until);
+setup(pin, state, delay, has_changed, ignore_until);
 }
 
 Button::~Button()
 {}
 
-void Button::setup(uint8_t pin, unsigned long delay, bool state, bool has_changed, unsigned long ignore_until){
+void Button::setup(uint8_t pin, bool state, unsigned long delay, bool has_changed, unsigned long ignore_until){
   _pin = pin;
-  _delay = delay;
   _state = state;
   _defaultstate = state;
+  _delay = delay;
   _has_changed = has_changed;
   _ignore_until = ignore_until;
   if(_state == HIGH){
