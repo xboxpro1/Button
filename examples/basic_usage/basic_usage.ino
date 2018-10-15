@@ -1,16 +1,16 @@
 #include <Button.h>
 
-Button button1(2); // Connect your button between pin 2 and GND
-Button button2(3); // Connect your button between pin 3 and GND
-Button button3(4); // Connect your button between pin 4 and GND
+static Button button1; // not enabled yet, setup has to be called later
+static Button button2; // not enabled yet, setup has to be called later
+static Button button3; // not enabled yet, setup has to be called later
 
 void setup() {
-	button1.begin();
-	button2.begin();
-	button3.begin();
+	button1.setup(2); // Connect your button between pin 2 and GND
+	button2.setup(3); // Connect your button between pin 3 and GND
+	button3.setup(4); // Connect your button between pin 4 and GND
 	
 	while (!Serial) { }; // for Leos
-	Serial.begin(9600);
+	Serial.begin(115200);
 }
 
 void loop() {
