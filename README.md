@@ -65,7 +65,7 @@ Here is the 'basic\_usage' example program, included in the download:
     		Serial.println("Button 2 released");
     	
     	if (button3.toggled()) {
-    		if (button3.read() == LOW)
+    		if (!button3.read())
     			Serial.println("Button 3 has been pressed");
     		else
     			Serial.println("Button 3 has been released");
