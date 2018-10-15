@@ -2,6 +2,7 @@ Button
 ======
 
 * Author: Michael Adams (<http://www.michael.net.nz>)
+* Modified: Martin Staehling 2018
 * Copyright (C) 2016 Michael D K Adams.
 * Released under the MIT license.
 
