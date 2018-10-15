@@ -2,7 +2,7 @@ Button
 ======
 
 * Author: Michael Adams (<http://www.michael.net.nz>)
-* Modified: Martin Staehling 2018
+* Modified: 2018 Martin Staehling (xboxpro1)
 * Copyright (C) 2016 Michael D K Adams.
 * Released under the MIT license.
 
@@ -74,11 +74,11 @@ Here is the 'basic\_usage' example program, included in the download:
 
 Documentation
 -------------
-**Button(int pin)**
+**Button**
 Creates a new Button.
 
-**void begin()**
-Call this in your `setup` method to setup the button. All it does is set the correct pin mode.
+**void setup(int pin)**
+Call this in your `setup` method to setup the button. All it does is set the pin and the correct pin mode.
 
 **bool pressed()**
 Returns true when _and only when_ the button is pressed. Until the button is released (in the debounced-sense of the word) this function won't return true again. So in effect, it returns true only while you are pressing the button, or to put it another way, it fires on a rising edge.
@@ -105,6 +105,7 @@ So to make it a bit more obvious what you're talking about, you can use a couple
 License
 -------
 Copyright (c) 2016 Michael D K Adams. http://www.michael.net.nz/
+Modified 2018 Martin Staehling (xboxpro1)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
