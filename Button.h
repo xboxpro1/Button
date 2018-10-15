@@ -23,8 +23,8 @@ class Button
 		bool released();
 		bool has_changed();
 		
-		const static bool PRESSED = LOW;
-		const static bool RELEASED = HIGH;
+		const static bool PRESSED = !_state;
+		const static bool RELEASED = _state;
 	
 	private:
 		uint8_t  _pin;
