@@ -6,13 +6,17 @@
 
 #ifndef Button_h
 #define Button_h
-#include "Arduino.h"
+
+#define DEFAULT_DEBOUNCE_DELAY 100
+#define DEFAULT_STATE HIGH
+
 
 class Button
 {
 	public:
-		Button(uint8_t pin);
-		void begin();
+		explicit Button(uint8_t pin = -1, unsigned long delay = DEFAULT_DEBOUNCE_DELAY, bool state = DEFAULT_STATE, bool has_changed = false, unsigned long ignore_until = 0);
+		virtual ~Button();
+		void setup(uint8_t pin, unsigned long delay = DEFAULT_DEBOUNCE_DELAY, bool state = DEFAULT_STATE, bool has_changed = false, unsigned long ignore_until = 0);
 		bool read();
 		bool toggled();
 		bool pressed();
