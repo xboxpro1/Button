@@ -21,7 +21,7 @@ void loop() {
 		Serial.println("Button 2 released");
 	
 	if (button3.toggled()) {
-		if (button3.read() == Button::PRESSED)
+		if (!button3.read())
 			Serial.println("Button 3 has been pressed");
 		else
 			Serial.println("Button 3 has been released");
