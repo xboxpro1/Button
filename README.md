@@ -34,7 +34,7 @@ Requirements
 
 Installation
 ------------
-Download the ZIP archive (https://github.com/madleech/Button/zipball/master), then open the Arduino IDE and choose Sketch > Include Library > Add .ZIP Library... and select your downloaded file.
+Download the ZIP archive, then open the Arduino IDE and choose Sketch > Include Library > Add .ZIP Library... and select your downloaded file.
 
 You should now see in File > Examples > Button entires for the basic\_usage example.
 
