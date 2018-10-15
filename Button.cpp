@@ -4,9 +4,10 @@
 	MIT licensed.
 */
 
+#include <Arduino.h>
 #include "Button.h"
 
-Button::Button(uint8_t pin, bool state, unsigned long delay, bool has_changed, unsigned long ignore_until)
+Button::Button(byte pin, bool state, unsigned long delay, bool has_changed, unsigned long ignore_until)
 :  _pin(pin)
 ,  _state(HIGH)
 ,  _delay(80)
@@ -19,7 +20,7 @@ setup(pin, state, delay, has_changed, ignore_until);
 Button::~Button()
 {}
 
-void Button::setup(uint8_t pin, bool state, unsigned long delay, bool has_changed, unsigned long ignore_until){
+void Button::setup(byte pin, bool state, unsigned long delay, bool has_changed, unsigned long ignore_until){
   _pin = pin;
   _state = state;
   _defaultstate = state;
