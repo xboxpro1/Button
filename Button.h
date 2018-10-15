@@ -23,13 +23,12 @@ class Button
 		bool released();
 		bool has_changed();
 		
-		const static bool PRESSED = !_state;
-		const static bool RELEASED = _state;
-	
+			
 	private:
 		uint8_t  _pin;
 		uint16_t _delay;
 		bool     _state;
+		bool	 _defaultstate;
 		bool     _has_changed;
 		uint32_t _ignore_until;
 };
