@@ -5,7 +5,6 @@
 */
 
 #include "Button.h"
-#include <Arduino.h>
 
 Button::Button(uint8_t pin, unsigned long delay, bool state, bool has_changed, unsigned long ignore_until)
 :  _pin(pin)
@@ -26,11 +25,12 @@ void Button::setup(uint8_t pin, unsigned long delay, bool state, bool has_change
   _state = state;
   _has_changed = has_changed;
   _ignore_until = ignore_until;
-}
-
-void Button::begin()
-{
+  if(_state == HIGH){
 	pinMode(_pin, INPUT_PULLUP);
+  }
+  else{
+	pinMode(_pin, INPUT);
+  }
 }
 
 // 
