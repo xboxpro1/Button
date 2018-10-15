@@ -23,6 +23,7 @@ void Button::setup(uint8_t pin, unsigned long delay, bool state, bool has_change
   _pin = pin;
   _delay = delay;
   _state = state;
+  _defaultstate = state;
   _has_changed = has_changed;
   _ignore_until = ignore_until;
   if(_state == HIGH){
@@ -77,7 +78,7 @@ bool Button::has_changed()
 // has the button gone from off -> on
 bool Button::pressed()
 {
-	if (read() == PRESSED && has_changed() == true)
+	if (read() == !_defaultstate && has_changed() == true)
 		return true;
 	else
 		return false;
@@ -86,7 +87,7 @@ bool Button::pressed()
 // has the button gone from on -> off
 bool Button::released()
 {
-	if (read() == RELEASED && has_changed() == true)
+	if (read() == _defaultstate && has_changed() == true)
 		return true;
 	else
 		return false;
