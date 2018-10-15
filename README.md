@@ -52,9 +52,8 @@ Here is the 'basic\_usage' example program, included in the download:
 	button1.setup(2); // Connect your button between pin 2 and GND
 	button2.setup(3); // Connect your button between pin 3 and GND
 	button3.setup(4); // Connect your button between pin 4 and GND
-    	
     	while (!Serial) { }; // for Leos
-    	Serial.begin(115200);
+	Serial.begin(115200);
     }
     
     void loop() {
