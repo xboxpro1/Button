@@ -7,32 +7,34 @@
 #include <Arduino.h>
 #include "Button.h"
 
-Button::Button(int pin, bool state, int delay, bool has_changed, unsigned long ignore_until)
+Button::Button(int pin, int mode, int delay, bool has_changed, unsigned long ignore_until)
 :  _pin(pin)
-,  _state(HIGH)
+,  _mode(INPUT_PULLUP)
 ,  _delay(80)
 ,  _has_changed(false)
 ,  _ignore_until(0)
 {	
-setup(pin, state, delay, has_changed, ignore_until);
+setup(pin, mode, delay, has_changed, ignore_until);
 }
 
 Button::~Button()
 {}
 
-void Button::setup(int pin, bool state, int delay, bool has_changed, unsigned long ignore_until){
+void Button::setup(int pin, int mode, int delay, bool has_changed, unsigned long ignore_until){
   _pin = pin;
-  _state = state;
-  _defaultstate = state;
+  _mode = mode;
   _delay = delay;
   _has_changed = has_changed;
   _ignore_until = ignore_until;
-  if(_state == HIGH){
-	pinMode(_pin, INPUT_PULLUP);
+  if(_mode == INPUT_PULLUP){
+	_state = HIGH;
+	_defaultstate = HIGH;
   }
   else{
-	pinMode(_pin, INPUT);
+	_state = LOW;
+	_defaultstate = LOW;
   }
+  pinMode(_pin, _mode);
 }
 
 // 
