@@ -37,10 +37,6 @@ void Button::setup(int pin, int mode, int delay, bool has_changed, unsigned long
   pinMode(_pin, _mode);
 }
 
-// 
-// public methods
-// 
-
 bool Button::read()
 {
 	// ignore pin changes until after this delay time
