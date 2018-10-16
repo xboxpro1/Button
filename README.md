@@ -20,7 +20,7 @@ Features
 --------
 * Super simple API.
 * Handles debouncing.
-* Sets the pin mode automatically.
+* Sets the pin mode automatically to INPUT_HIGH.
 * Lets you write code that triggers:
 ** based on the pin state (high or low)
 ** when a button is pressed
@@ -77,7 +77,7 @@ Documentation
 **Button**
 Creates a new Button.
 
-**void setup(int pin)**
+**void setup(int pin[, int mode])**
 Call this in your `setup` method to setup the button. All it does is set the pin and the correct pin mode.
 
 **bool pressed()**
