@@ -100,7 +100,6 @@ Quirks and Things to Keep in Mind
 **Highs and lows, lows and highs**
 The easiest way to connect a switch on an Arduino is to connect it between an input pin and ground, and use the internal pullup resistor to make sure it doesn't float. This is fine and dandy, but it can get a bit confusing, as a "pressed" button is logic level: low, while a "released" button is logic level: high.
 
-So to make it a bit more obvious what you're talking about, you can use a couple of handy shortcuts: `Button::PRESSED` and `Button::RELEASED` which map to the expected values.
 
 License
 -------
