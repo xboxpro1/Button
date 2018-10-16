@@ -78,7 +78,7 @@ Documentation
 Creates a new Button.
 
 **void setup(int pin[, int mode])**
-Call this in your `setup` method to setup the button. All it does is set the pin and the correct pin mode.
+Call this in your `setup` method to setup the button. All it does is set the pin and the correct pin mode. Default pin mode is INPUT_HIGH.
 
 **bool pressed()**
 Returns true when _and only when_ the button is pressed. Until the button is released (in the debounced-sense of the word) this function won't return true again. So in effect, it returns true only while you are pressing the button, or to put it another way, it fires on a rising edge.
