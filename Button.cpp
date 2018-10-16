@@ -28,11 +28,11 @@ void Button::setup(int pin, int pin_mode, int delay, bool has_changed, unsigned 
   _ignore_until = ignore_until;
   if(_pin_mode == INPUT_PULLUP){
 	_state = HIGH;
-	_defaultstate = HIGH;
+	_default_state = HIGH;
   }
   else{
 	_state = LOW;
-	_defaultstate = LOW;
+	_default_state = LOW;
   }
   pinMode(_pin, _pin_mode);
 }
@@ -77,7 +77,7 @@ bool Button::has_changed()
 // has the button gone from off -> on
 bool Button::pressed()
 {
-	if (read() == !_defaultstate && has_changed() == true)
+	if (read() == !_default_state && has_changed() == true)
 		return true;
 	else
 		return false;
@@ -86,7 +86,7 @@ bool Button::pressed()
 // has the button gone from on -> off
 bool Button::released()
 {
-	if (read() == _defaultstate && has_changed() == true)
+	if (read() == _default_state && has_changed() == true)
 		return true;
 	else
 		return false;
